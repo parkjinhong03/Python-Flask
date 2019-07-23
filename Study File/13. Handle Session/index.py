@@ -17,7 +17,7 @@ def login():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
     else:
-        return 'fuck you'
+        return ''
 
 
 @app.route('/logout', methods=['POST'])
