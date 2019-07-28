@@ -1,7 +1,8 @@
-from flask import Flask, request, make_response, Response
+from flask import Flask, request, make_response
 import os
 
-def Login():
+
+def login():
     if request.method == 'POST':
         LoginData = request.form
         id = LoginData['id']
@@ -10,8 +11,8 @@ def Login():
         if 'login' in request.cookies:
             return 'you alreay login!'
 
-        if os.path.exists("User/"+id) == True:
-            f = open('User/'+id, 'r')
+        if os.path.exists("Data/User/"+id) == True:
+            f = open('Data/User/'+id, 'r')
             real_pw = f.readline()
 
             if pw == real_pw:
